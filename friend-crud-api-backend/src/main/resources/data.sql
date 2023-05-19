@@ -1,0 +1,5 @@
+insert into Friend (id,firstname,lastname,department,email,country) values (1, 'Abdulkerim','Mohammed','It','abdu@gmail.com','Ethiopia')
+insert into Friend (id,firstname,lastname,department,email,country) values (2, 'Abdulkerim','Mohammed','It','abdu@gmail.com','Ethiopia')
+insert into Friend (id,firstname,lastname,department,email,country) values (3, 'Abdulkerim','Mohammed','It','abdu@gmail.com','Ethiopia')
+insert into Friend (id,firstname,lastname,department,email,country) values (4, 'Abdulkerim','Mohammed','It','abdu@gmail.com','Ethiopia')
+insert into Friend (id,firstname,lastname,department,email,country) values (5, 'Abdulkerim','Mohammed','It','abdu@gmail.com','Ethiopia')

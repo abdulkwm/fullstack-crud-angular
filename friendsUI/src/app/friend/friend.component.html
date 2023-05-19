@@ -1,0 +1,43 @@
+<div>
+<div class="container">
+    <div class="border">
+        <button class="btn btn-md btn-outline-primary">
+            <i class="fa fa-user">New Friend</i>
+        </button>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let friend of friends" >
+                <td><span>{{friend.id}}</span></td>
+                <td><span>{{friend.firstname}}</span></td>
+                <td><span>{{friend.lastname}}</span></td>
+                <td><span>{{friend.department}}</span></td>
+                <td><span>{{friend.email}}</span></td>
+                <td><span>{{friend.country}}</span></td>
+                <td>
+                    <button class="btn btn-sm btn-info">
+                        <i class="fa fa-search" aria-hidden="true">Details</i>
+                    </button>
+                    <button class="btn btn-sm btn-warning">
+                        <i class="fa fa-edit">Edit</i>
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+                        <i class="fa fa-remove">Delete</i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
