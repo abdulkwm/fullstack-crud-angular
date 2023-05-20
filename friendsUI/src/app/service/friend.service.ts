@@ -13,4 +13,5 @@ export class FriendService {
   getFriends():Observable<Friend[]> {
     return this.httpClient.get<Friend[]>(`${this.baseUrl}`);
   }
+  
 }

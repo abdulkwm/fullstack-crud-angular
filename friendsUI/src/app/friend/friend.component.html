@@ -1,43 +1,88 @@
 <div>
-<div class="container">
-    <div class="border">
-        <button class="btn btn-md btn-outline-primary">
-            <i class="fa fa-user">New Friend</i>
-        </button>
+    <div class="container">
+        <div class="border">
+            <button class="btn btn-md btn-outline-primary" (click)="open(content)">
+                <i class="fa fa-user">New Friend</i>
+            </button>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let friend of friends">
+                    <td><span>{{friend.id}}</span></td>
+                    <td><span>{{friend.firstname}}</span></td>
+                    <td><span>{{friend.lastname}}</span></td>
+                    <td><span>{{friend.department}}</span></td>
+                    <td><span>{{friend.email}}</span></td>
+                    <td><span>{{friend.country}}</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-info">
+                            <i class="fa fa-search" aria-hidden="true">Details</i>
+                        </button>
+                        <button class="btn btn-sm btn-warning">
+                            <i class="fa fa-edit">Edit</i>
+                        </button>
+                        <button class="btn btn-sm btn-danger">
+                            <i class="fa fa-remove">Delete</i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Department</th>
-                <th>Email</th>
-                <th>Country</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let friend of friends" >
-                <td><span>{{friend.id}}</span></td>
-                <td><span>{{friend.firstname}}</span></td>
-                <td><span>{{friend.lastname}}</span></td>
-                <td><span>{{friend.department}}</span></td>
-                <td><span>{{friend.email}}</span></td>
-                <td><span>{{friend.country}}</span></td>
-                <td>
-                    <button class="btn btn-sm btn-info">
-                        <i class="fa fa-search" aria-hidden="true">Details</i>
-                    </button>
-                    <button class="btn btn-sm btn-warning">
-                        <i class="fa fa-edit">Edit</i>
-                    </button>
-                    <button class="btn btn-sm btn-danger">
-                        <i class="fa fa-remove">Delete</i>
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">New Friend</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="firstname">Firstname</label>
+                    <div class="input-group">
+                        <input id="firstname" name="firstname" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Lastname</label>
+                    <div class="input-group">
+                        <input id="lastname" name="lastname" class="form-control" ngModel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <div class="input-group">
+                        <input id="department" name="department" class="form-control" ngModel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <input id="email" name="email" class="form-control" ngModel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <div class="input-group">
+                        <input id="country" name="country" class="form-control" ngModel>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="border text-center">
+            <button data-dismiss="modal" class="btn btn-info">Submit</button>
+        </div>
+    </ng-template>
 </div>
