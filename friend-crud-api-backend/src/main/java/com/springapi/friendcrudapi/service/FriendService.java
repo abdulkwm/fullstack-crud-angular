@@ -1,8 +1,8 @@
 package com.springapi.friendcrudapi.service;
 
+import antlr.collections.List;
 import com.springapi.friendcrudapi.entity.Friend;
 
-import java.util.List;
 
 public interface FriendService {
     Friend addFriend (Friend friend);
